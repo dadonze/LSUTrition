@@ -29,10 +29,12 @@ public class restaurant_menu_activity extends AppCompatActivity implements Resta
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_menu_activity);
+
         Intent start = getIntent();
-        recyclerView = (RecyclerView) findViewById(R.id.menu_item_list_RV);
         restaurantName = start.getStringExtra("Restaurant Name");
         setTitle(restaurantName);
+
+        recyclerView = (RecyclerView) findViewById(R.id.menu_item_list_RV);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);

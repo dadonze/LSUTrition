@@ -33,6 +33,12 @@ public class User_Order_Cart {
     public RestaurantMenuItem removeitem(int index){
         return item_Cart.remove(index);
     }
+    public RestaurantMenuItem viewItem(int index){
+        return item_Cart.get(index);
+    }
+    public int getSize(){
+        return item_Cart.size();
+    }
     public float getTotalCalories(){
         return totalCalories;
     }
