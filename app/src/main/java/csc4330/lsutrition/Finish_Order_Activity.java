@@ -50,4 +50,7 @@ public class Finish_Order_Activity extends AppCompatActivity {
         cart.checkOut();
         finish();
     }
+    public void deleteItem(View view){
+
+    }
 }

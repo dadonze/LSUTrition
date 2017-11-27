@@ -36,6 +36,7 @@ public class CheckoutListAdapter extends RecyclerView.Adapter<CheckoutListAdapte
     public int getItemCount() {
         return cart.getSize();
     }
+
     class CheckoutViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView restaurantItemTextView;
         TextView restaurantCalorieTextView;

@@ -30,4 +30,7 @@ public class FakeDataUtils {
         return data;
 
     }
+    public  static String fakeDeals(){
+        return "fake";
+    }
 }
