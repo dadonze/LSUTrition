@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="csc4330.lsutrition.Finish_Order_Activity"
+    tools:context="csc4330.lsutrition.Activities.Finish_Order_Activity"
     >
     <FrameLayout
         android:layout_width="match_parent"

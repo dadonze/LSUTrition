@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="csc4330.lsutrition.Add_Item_To_Cart_Activity">
+    tools:context="csc4330.lsutrition.Activities.Add_Item_To_Cart_Activity">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"

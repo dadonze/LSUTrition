@@ -1,14 +1,22 @@
-package csc4330.lsutrition;
+package csc4330.lsutrition.Activities;
 
+import android.content.ContentValues;
+import android.net.Uri;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
+import csc4330.lsutrition.Adapters.CheckoutListAdapter;
+import csc4330.lsutrition.OrderContentData.OrderContract;
+import csc4330.lsutrition.R;
+import csc4330.lsutrition.User_Order_Cart;
 
 public class Finish_Order_Activity extends AppCompatActivity {
     User_Order_Cart cart;
@@ -48,6 +56,15 @@ public class Finish_Order_Activity extends AppCompatActivity {
     }
     public void finishOrder(View view){
         cart.checkOut();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put(OrderContract.OrderEntry.COLUMN_ORDER_CALORIES, cart.getTotalCalories());
+        try {
+            Uri uri = getContentResolver().insert(OrderContract.OrderEntry.CONTENT_URI, contentValues);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        //Log.d("URI", "finishOrder: " +uri.toString());
         finish();
     }
     public void deleteItem(View view){

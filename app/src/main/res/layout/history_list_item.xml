@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+<FrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:id="@+id/order_history_ordernumber_RV"
+        style="@style/recyclerView_display_theme"
+        android:text="Order #1"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:id="@+id/order_history_totalcal_RV"
+        android:layout_marginTop="35dp"
+        style="@style/recyclerView_display_theme"
+        android:text="500 calories"/>
+
+</FrameLayout>
+</android.support.constraint.ConstraintLayout>

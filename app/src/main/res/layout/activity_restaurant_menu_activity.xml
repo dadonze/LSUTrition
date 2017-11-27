@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="csc4330.lsutrition.restaurant_menu_activity">
+    tools:context="csc4330.lsutrition.Activities.restaurant_menu_activity">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

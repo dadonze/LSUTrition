@@ -1,4 +1,4 @@
-package csc4330.lsutrition;
+package csc4330.lsutrition.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,7 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import csc4330.lsutrition.R;
+import csc4330.lsutrition.RestaurantMenuItem;
 
 /**
  * Created by Danny on 11/24/2017.

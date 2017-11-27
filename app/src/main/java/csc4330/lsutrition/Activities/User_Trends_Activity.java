@@ -1,10 +1,12 @@
-package csc4330.lsutrition;
+package csc4330.lsutrition.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import csc4330.lsutrition.R;
 
 public class User_Trends_Activity extends AppCompatActivity {
 

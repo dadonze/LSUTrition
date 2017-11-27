@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="csc4330.lsutrition.user_history_activity">
+    tools:context="csc4330.lsutrition.Activities.user_history_activity">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

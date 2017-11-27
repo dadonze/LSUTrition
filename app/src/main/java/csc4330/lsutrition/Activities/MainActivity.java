@@ -1,4 +1,4 @@
-package csc4330.lsutrition;
+package csc4330.lsutrition.Activities;
 
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
@@ -18,12 +18,16 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 
+import csc4330.lsutrition.Adapters.RestaurantNameAdapter;
+import csc4330.lsutrition.FakeDataUtils;
+import csc4330.lsutrition.R;
+
 public class MainActivity extends AppCompatActivity implements RestaurantNameAdapter.RestaurantNameClickListener {
     private RestaurantNameAdapter restaurantNameAdapter;
     private RecyclerView restaurantRecyclerView;
     private  GoogleSignInClient mGoogleSignInClient;
     private FloatingActionButton googleSignInActionButton;
-    private GoogleSignInAccount account;
+    public static GoogleSignInAccount account;
 
     /*
         Android System Action called whenever the corresponding layout is inflated (app launched, phone rotated, ect.)
@@ -99,6 +103,7 @@ public class MainActivity extends AppCompatActivity implements RestaurantNameAda
             return true;
         }else if ((id == R.id.action_sign_out)){
             mGoogleSignInClient.signOut();
+            account = null;
             googleSignInActionButton.setVisibility(View.VISIBLE);
         }
         return super.onOptionsItemSelected(item);
@@ -110,7 +115,9 @@ public class MainActivity extends AppCompatActivity implements RestaurantNameAda
         account = GoogleSignIn.getLastSignedInAccount(this);
         if(account!= null )
         {
+            //createFileInAppFolder(view);
             googleSignInActionButton.setVisibility(View.GONE);
+
         }
 
     }
@@ -138,4 +145,44 @@ public class MainActivity extends AppCompatActivity implements RestaurantNameAda
         Intent intent = new Intent(MainActivity.this, Deals_Display.class);
         startActivity(intent);
     }
+    /*private void createFileInAppFolder(View view) {
+        final Task<DriveFolder> appFolderTask = Drive.getDriveResourceClient(view.getContext(), account).getAppFolder();
+        final Task<DriveContents> createContentsTask = Drive.getDriveResourceClient(view.getContext(),account).createContents();
+        Tasks.whenAll(appFolderTask, createContentsTask)
+                .continueWithTask(new Continuation<Void, Task<DriveFile>() {
+                    @Override
+                    public Task<DriveFile> then(@NonNull Task<Void> task) throws Exception {
+                        DriveFolder parent = appFolderTask.getResult();
+                        DriveContents contents = createContentsTask.getResult();
+                        OutputStream outputStream = contents.getOutputStream();
+                        try (Writer writer = new OutputStreamWriter(outputStream)) {
+                            writer.write("Hello World!");
+                        }
+
+                        MetadataChangeSet changeSet = new MetadataChangeSet.Builder()
+                                .setTitle("New file")
+                                .setMimeType("text/plain")
+                                .setStarred(true)
+                                .build();
+
+                        return Drive.getDriveResourceClient().createFile(parent, changeSet, contents);
+                    }
+                })
+                .addOnSuccessListener(this,
+                        new OnSuccessListener<DriveFile>() {
+                            @Override
+                            public void onSuccess(DriveFile driveFile) {
+                                Log.d(TAG, "File Successfully Created")
+                                finish();
+                            }
+                        })
+                .addOnFailureListener(this, new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.e(TAG, "Unable to create file", e);
+
+                        finish();
+                    }
+                });
+    }*/
 }

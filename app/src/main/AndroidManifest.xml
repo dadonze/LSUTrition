@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="csc4330.lsutrition">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
@@ -13,9 +14,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,38 +26,42 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".restaurant_menu_activity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".Activities.restaurant_menu_activity"
+            android:parentActivityName=".Activities.MainActivity" />
         <activity
-            android:name=".user_history_activity"
+            android:name=".Activities.user_history_activity"
             android:label="@string/user_history_label"
             android:launchMode="singleTop"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".Activities.MainActivity" />
         <activity
-            android:name=".User_Trends_Activity"
+            android:name=".Activities.User_Trends_Activity"
             android:label="@string/user_trends_label"
             android:launchMode="singleTop"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".Activities.MainActivity" />
         <activity
-            android:name=".Deals_Display"
+            android:name=".Activities.Deals_Display"
             android:label="@string/deals_display_label"
             android:launchMode="singleTop"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".Activities.MainActivity" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".Activities.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".Activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Add_Item_To_Cart_Activity"
+            android:name=".Activities.Add_Item_To_Cart_Activity"
             android:launchMode="standard"
-            android:parentActivityName=".restaurant_menu_activity" />
+            android:parentActivityName=".Activities.restaurant_menu_activity" />
         <activity
-            android:name=".Finish_Order_Activity"
+            android:name=".Activities.Finish_Order_Activity"
             android:label="@string/order_display_label"
-            android:parentActivityName=".restaurant_menu_activity"
+            android:parentActivityName=".Activities.restaurant_menu_activity"
 
             />
+        <provider
+            android:authorities="csc4330.lsutrition"
+            android:name="csc4330.lsutrition.OrderContentData.OrderContentProvider"
+            android:exported="false" />
     </application>
 
 </manifest>

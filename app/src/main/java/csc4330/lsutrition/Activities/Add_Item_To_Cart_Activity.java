@@ -1,4 +1,4 @@
-package csc4330.lsutrition;
+package csc4330.lsutrition.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import csc4330.lsutrition.R;
+import csc4330.lsutrition.RestaurantMenuItem;
+import csc4330.lsutrition.User_Order_Cart;
 
 public class Add_Item_To_Cart_Activity extends AppCompatActivity {
         TextView calorieView;

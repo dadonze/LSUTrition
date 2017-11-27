@@ -1,4 +1,4 @@
-package csc4330.lsutrition;
+package csc4330.lsutrition.Activities;
 
 import android.content.Intent;
 import android.support.v4.app.NavUtils;
@@ -14,6 +14,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import csc4330.lsutrition.Adapters.RestaurantMenuAdapter;
+import csc4330.lsutrition.FakeDataUtils;
+import csc4330.lsutrition.R;
 
 public class restaurant_menu_activity extends AppCompatActivity implements RestaurantMenuAdapter.RestaurantMenuItemClickListener {
 

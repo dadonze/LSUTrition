@@ -1,12 +1,15 @@
-package csc4330.lsutrition;
+package csc4330.lsutrition.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import csc4330.lsutrition.R;
+import csc4330.lsutrition.RestaurantMenuItem;
+import csc4330.lsutrition.User_Order_Cart;
 
 /**
  * Created by Danny on 11/26/2017.
