@@ -44,6 +44,7 @@ public class Add_Item_To_Cart_Activity extends AppCompatActivity {
         cart.addItem(new RestaurantMenuItem(itemName,itemCalories));
         Intent intent = new Intent(this,Finish_Order_Activity.class);
         startActivity(intent);
+        finish();
     }
 
 }

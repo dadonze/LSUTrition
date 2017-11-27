@@ -5,16 +5,17 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 public class Finish_Order_Activity extends AppCompatActivity {
-
+    User_Order_Cart cart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish__order_);
         ActionBar actionBar = this.getSupportActionBar();
-        User_Order_Cart cart = User_Order_Cart.createUser_Order_Cart();
+        cart = User_Order_Cart.createUser_Order_Cart();
 
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -32,5 +33,9 @@ public class Finish_Order_Activity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    public void finishOrder(View view){
+        cart.checkOut();
+        finish();
     }
 }
