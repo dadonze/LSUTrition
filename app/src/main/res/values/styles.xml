@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -12,7 +12,16 @@
         <item name="android:textSize">26sp</item>
 
     </style>
+    <style name="information_text_theme_Large">
+        <item name="android:textSize">28sp</item>
+    </style>
 
+    <style name="information_text_theme_Medium">
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="information_text_theme_small">
+        <item name="android:textSize">14sp</item>
+    </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

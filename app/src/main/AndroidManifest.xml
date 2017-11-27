@@ -46,6 +46,16 @@
             android:label="@string/title_activity_settings"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Add_Item_To_Cart_Activity"
+            android:launchMode="standard"
+            android:parentActivityName=".restaurant_menu_activity" />
+        <activity
+            android:name=".Finish_Order_Activity"
+            android:label="@string/order_display_label"
+            android:parentActivityName=".restaurant_menu_activity"
+
+            />
     </application>
 
 </manifest>

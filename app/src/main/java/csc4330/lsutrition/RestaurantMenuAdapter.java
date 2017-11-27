@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 /**
  * Created by Danny on 11/24/2017.
  */
@@ -24,6 +26,7 @@ public class RestaurantMenuAdapter extends RecyclerView.Adapter<RestaurantMenuAd
         numberOfViewHolders = 0;
         restaurantMenuItemClickListener = listener;
     }
+
     /*
         Called whenever a viewholder is created to handle its integration into the RecyclerView Adapter
         @param parent: reference to the parent view(RecylerView in this case)
@@ -83,7 +86,7 @@ public class RestaurantMenuAdapter extends RecyclerView.Adapter<RestaurantMenuAd
          */
         public void bind(int index){
             restaurantItemTextView.setText(menu_items[index].getName());
-            String calorieText = String.valueOf(menu_items[index].getCalories()) + " Calories";
+            String calorieText = String.valueOf(menu_items[index].getCalories());
             restaurantCalorieTextView.setText(calorieText);
         }
         /*

@@ -3,7 +3,10 @@ package csc4330.lsutrition;
 /**
  * Created by Danny on 11/22/2017.
  */
-
+/*
+    FakeDataUtils is a utility class designed for assiting in debugging and providing a safety net in the event
+    of a Server or Internet issue during the presentation
+ */
 public class FakeDataUtils {
 
     public static String[] generateData(){

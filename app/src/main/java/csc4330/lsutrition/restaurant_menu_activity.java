@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -43,6 +46,21 @@ public class restaurant_menu_activity extends AppCompatActivity implements Resta
         recyclerView.setAdapter(restaurantMenuAdapter);
 
     }
+
+    /*
+        Handles the creation of a toolbar menu and displays it to the user
+        @param menu : the predefined menu to be created
+        @return : true if there is a menu made, false unless overriden
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        /* Use AppCompatActivity's method getMenuInflater to get a handle on the menu inflater */
+        MenuInflater inflater = getMenuInflater();
+
+        inflater.inflate(R.menu.restaurant_menu_activity_menu, menu);
+        /* Return true so that the menu is displayed in the Toolbar */
+        return true;
+    }
     /*
         Handles click events on the menu options
         @param item - reference to the element clicked by the user
@@ -54,6 +72,11 @@ public class restaurant_menu_activity extends AppCompatActivity implements Resta
         // When the home button is pressed, take the user back to the VisualizerActivity
         if (id == android.R.id.home) {
             NavUtils.navigateUpFromSameTask(this);
+        }else
+            if (id == R.id.action_finish_order){
+            Intent intent = new Intent(this,Finish_Order_Activity.class);
+            startActivity(intent);
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -64,9 +87,18 @@ public class restaurant_menu_activity extends AppCompatActivity implements Resta
      */
     @Override
     public void onRestaurantItemClick(int clickedItemIndex, View view) {
-        TextView textView= (TextView) view.findViewById(R.id.tv_selected_restaurant_menu_item_name_RV);
-        String toastMessage = "Clicked " + textView.getText().toString();
+        TextView itemNameView= (TextView) view.findViewById(R.id.tv_selected_restaurant_menu_item_name_RV);
+        TextView calorieView = (TextView) view.findViewById(R.id.tv_selected_restaurant_menu_item_calories_RV);
+        String itemSelectedName = itemNameView.getText().toString();
+        String toastMessage = "Clicked " + itemSelectedName;
         Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this,Add_Item_To_Cart_Activity.class);
+        float calories = Float.valueOf(calorieView.getText().toString());
+        Log.d("calories:",String.valueOf(calories));
+        intent.putExtra("Item Name",itemSelectedName);
+        intent.putExtra("CaloriesS", calorieView.getText().toString());
+        intent.putExtra("CaloriesF",calories);
+        startActivity(intent);
 
     }
 }
