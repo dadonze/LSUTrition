@@ -24,6 +24,7 @@
         android:contentDescription="delete"
         android:src="@drawable/ic_close_black_24dp"
         android:background="#FFFF"
+        android:id="@+id/checkout_item_delete_button_RV"
         />
 
 </FrameLayout>
