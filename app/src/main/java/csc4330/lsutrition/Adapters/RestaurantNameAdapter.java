@@ -39,6 +39,7 @@ public class RestaurantNameAdapter extends RecyclerView.Adapter<RestaurantNameAd
         return nameViewHolder;
     }
 
+
     @Override
     public void onBindViewHolder(NameViewHolder holder, int position) {
 

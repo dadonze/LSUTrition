@@ -17,9 +17,21 @@ import csc4330.lsutrition.User_Order_Cart;
 
 public class CheckoutListAdapter extends RecyclerView.Adapter<CheckoutListAdapter.CheckoutViewHolder> {
     User_Order_Cart cart;
+
+    /**
+     * Constructor for the CheckoutListAdapter, initializes the cart
+     */
     public CheckoutListAdapter(){
         cart = User_Order_Cart.createUser_Order_Cart();
     }
+
+    /**
+     * Called to create a new viewholder within the recyclerView, handling its setup
+     * @param parent - parent view of all viewholders(RecyclerView in this case)
+     * @param viewType - id of the ViewHolder type, used if more than one Viewholder can populate a RecyclerView
+     * @return the newly created checkoutViewHolder
+     */
+
     @Override
     public CheckoutViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
@@ -30,11 +42,20 @@ public class CheckoutListAdapter extends RecyclerView.Adapter<CheckoutListAdapte
 
     }
 
+    /**
+     * Called to bind a created viewHolder to a particular index in the RecyclerView.
+     * @param holder a reference to the viewHolder, allowing us to call any needed functions relative to its position
+     * @param position the index of the viewHolder in the RecyclerView
+     */
     @Override
     public void onBindViewHolder(CheckoutViewHolder holder, int position) {
         holder.bind(position);
     }
 
+    /**
+     *
+     * @return - the size of the RecyclerView(in this case, the size of the cart)
+     */
     @Override
     public int getItemCount() {
         return cart.getSize();
@@ -43,7 +64,7 @@ public class CheckoutListAdapter extends RecyclerView.Adapter<CheckoutListAdapte
     class CheckoutViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView restaurantItemTextView;
         TextView restaurantCalorieTextView;
-        /*
+        /**
             Overriden Constructor for the Viewholder, obtains references to the xml elements in its elements
             @param view: reference to the xml layout for the individual item
 
@@ -54,8 +75,8 @@ public class CheckoutListAdapter extends RecyclerView.Adapter<CheckoutListAdapte
             restaurantCalorieTextView = (TextView) view.findViewById(R.id.checkout_item_calorie_RV);
             //itemView.setOnClickListener(this);
         }
-        /*
-            Called when the viewHolder is bound to the Recyclerview
+        /**
+            Called when the viewHolder is bound to the Recyclerview,
             @param index: the index of the item relative to the entire list
          */
         public void bind(int index){
@@ -64,8 +85,8 @@ public class CheckoutListAdapter extends RecyclerView.Adapter<CheckoutListAdapte
             String calorieText = "Calories: " + String.valueOf(item.getCalories());
             restaurantCalorieTextView.setText(calorieText);
         }
-        /*
-            Click handler for when a viewHolder is clicked
+        /**
+            Click handler for when a viewHolder is clicked (Required by parent class)
             @param view : reference to the xml layout of the viewholder
          */
         @Override

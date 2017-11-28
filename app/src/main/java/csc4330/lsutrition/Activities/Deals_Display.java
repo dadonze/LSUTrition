@@ -11,7 +11,7 @@ import csc4330.lsutrition.R;
 public class Deals_Display extends AppCompatActivity {
 
 
-    /*
+    /**
         Android System Action called whenever the corresponding layout is inflated (activity launched, phone rotated, ect.)
         Actions taken are all setup required for the app interface to work
         @param savedInstanceState: contains any data relevant to the current session in the event that the view is destroyed and recreated (e.g. the phone is rotated with user data entered)
@@ -23,10 +23,11 @@ public class Deals_Display extends AppCompatActivity {
         ActionBar actionBar = this.getSupportActionBar();
 
         if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(true); // enables the back button
         }
     }
-    /*
+
+    /**
         Click handler for the bottom nav component User history
         @param view - reference to the element clicked
      */
@@ -34,7 +35,7 @@ public class Deals_Display extends AppCompatActivity {
         Intent intent = new Intent(Deals_Display.this, user_history_activity.class);
         startActivity(intent);
     }
-    /*
+    /**
         Click handler for the bottom nav component User Trends
         @param view - reference to the element clicked
      */
@@ -42,7 +43,7 @@ public class Deals_Display extends AppCompatActivity {
         Intent intent = new Intent(Deals_Display.this, User_Trends_Activity.class);
         startActivity(intent);
     }
-    /*
+    /**
         Click handler for the bottom nav Home Button
         @param view - reference to the element clicked
      */

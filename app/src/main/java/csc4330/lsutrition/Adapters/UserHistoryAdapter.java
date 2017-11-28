@@ -11,19 +11,27 @@ import android.widget.TextView;
 import csc4330.lsutrition.OrderContentData.OrderContract;
 import csc4330.lsutrition.R;
 
-/**
- * Created by Danny on 11/27/2017.
- */
+
 
 public class UserHistoryAdapter extends RecyclerView.Adapter<UserHistoryAdapter.HistoryViewHolder>{
 
     private Cursor historyCursor;
     private Context useContext;
 
+    /**
+     * constructor for the UserHistoryAdapter
+     * @param context the context the Adapter is used in
+     */
     public UserHistoryAdapter(Context context){
         useContext = context;
     }
 
+    /**
+     *Called to create a new viewholder within the recyclerView, handling its setup
+     * @param parent - the parent view of the Viewgroups, in this case, the RecyclerView
+     * @param viewType - integer ID of the viewtype(used when there are different Viewholder children in the same Adapter)
+     * @return - the newly created Viewholder
+     */
     @Override
     public HistoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(useContext)
@@ -32,6 +40,11 @@ public class UserHistoryAdapter extends RecyclerView.Adapter<UserHistoryAdapter.
         return new HistoryViewHolder(view);
     }
 
+    /**
+     * Called to bind a created viewHolder to a particular index in the RecyclerView.
+     * @param holder - a reference to the viewHolder, allowing us to call any needed functions relative to position
+     * @param position - the index of the viewHolder
+     */
     @Override
     public void onBindViewHolder(HistoryViewHolder holder, int position) {
         int idIndex = historyCursor.getColumnIndex(OrderContract.OrderEntry._ID);
@@ -52,7 +65,10 @@ public class UserHistoryAdapter extends RecyclerView.Adapter<UserHistoryAdapter.
     }
 
 
-
+    /**
+     *
+     * @return - the number of items in the RecyclerView, in this case, the size of the cursor
+     */
     @Override
     public int getItemCount() {
         if(historyCursor == null){
@@ -60,6 +76,12 @@ public class UserHistoryAdapter extends RecyclerView.Adapter<UserHistoryAdapter.
         }
         return historyCursor.getCount();
     }
+
+    /**
+     * Replaces the current cursor with a new one whenever one is loaded
+     * @param cursor - the new Cursor
+     * @return - the new Cursor if it is valid, otherwise the old cursor
+     */
     public Cursor swapCursor(Cursor cursor) {
         // check if this cursor is the same as the previous cursor (mCursor)
         if (historyCursor == cursor) {
@@ -74,11 +96,16 @@ public class UserHistoryAdapter extends RecyclerView.Adapter<UserHistoryAdapter.
         }
         return temp;
     }
+
     class HistoryViewHolder extends RecyclerView.ViewHolder{
 
         private TextView idView;
         private TextView calorieView;
 
+        /**
+         * Constructor for the HistoryViewHolder
+         * @param itemView - a reference to the view of the xml we want to use
+         */
         public HistoryViewHolder(View itemView) {
             super(itemView);
             idView = itemView.findViewById(R.id.order_history_ordernumber_RV);
