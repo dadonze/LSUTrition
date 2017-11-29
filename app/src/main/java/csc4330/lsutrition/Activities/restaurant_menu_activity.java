@@ -49,7 +49,7 @@ public class restaurant_menu_activity extends AppCompatActivity implements Resta
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);//enables the back button
         }
-        restaurantMenuAdapter = new RestaurantMenuAdapter(FakeDataUtils.generateFakeMenu(),this);
+        restaurantMenuAdapter = new RestaurantMenuAdapter(FakeDataUtils.generateFakeMenu(restaurantName),this);
         recyclerView.setAdapter(restaurantMenuAdapter);
 
     }

@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements RestaurantNameAda
         restaurantRecyclerView.setLayoutManager(layoutManager);
         restaurantRecyclerView.setHasFixedSize(true);
 
-        restaurantNameAdapter = new RestaurantNameAdapter(FakeDataUtils.generateData(),this);
+        restaurantNameAdapter = new RestaurantNameAdapter(FakeDataUtils.generateRestaurantNames(),this);
         restaurantRecyclerView.setAdapter(restaurantNameAdapter);
         //constructs the premade view that google uses to sign someone in
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

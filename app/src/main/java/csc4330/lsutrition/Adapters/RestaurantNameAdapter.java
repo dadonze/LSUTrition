@@ -59,7 +59,7 @@ public class RestaurantNameAdapter extends RecyclerView.Adapter<RestaurantNameAd
      */
     @Override
     public void onBindViewHolder(NameViewHolder holder, int position) {
-
+        holder.restaurantNameTextView.setText(restaurant_names[position]);
     }
     /**
      Required function to be overriden, returns the size of the list
