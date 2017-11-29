@@ -87,7 +87,7 @@ public class RestaurantMenuAdapter extends RecyclerView.Adapter<RestaurantMenuAd
             @param index: the index of the item relative to the entire list
          */
         public void bind(int index){
-            restaurantItemTextView.setText(menu_items[index].getName());
+            restaurantItemTextView.setText(menu_items[index].getName() + "\n\n");
             String calorieText = String.valueOf(menu_items[index].getCalories());
             restaurantCalorieTextView.setText(calorieText);
         }

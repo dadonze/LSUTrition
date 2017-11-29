@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LSUTrition.iml" filepath="$PROJECT_DIR$/LSUTrition.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LSUTritio.iml" filepath="$PROJECT_DIR$/LSUTritio.iml" />
+      <module fileurl="file://C:\Users\Kyle\Desktop\LSUTrition-master\LSUTrition.iml" filepath="C:\Users\Kyle\Desktop\LSUTrition-master\LSUTrition.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

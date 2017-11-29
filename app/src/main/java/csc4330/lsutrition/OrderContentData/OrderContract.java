@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.provider.BaseColumns;
 
 /**
- * This class defines the structure of a database to be queried, allowing error free construction of queries
+ * Created by Danny on 11/27/2017.
  */
 
 public class OrderContract {
@@ -24,6 +24,5 @@ public class OrderContract {
 
         public static final String TABLE_NAME = "orders";
         public static final String COLUMN_ORDER_CALORIES = "calories";
-        public static final String COLUMN_ORDER_TIME = "time";
     }
 }

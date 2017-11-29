@@ -1,0 +1,482 @@
+Restaurant Name,Menu Item,Type,Calories
+Chick-fil-A,Grilled Market Salad,Salad,330
+Chick-fil-A,Cobb Salad,Salad,510
+Chick-fil-A,Chick-fil-A Nuggets (8),Nuggets,260
+Chick-fil-A,Chick-fil-A Nuggets (12),Nuggets,390
+Chick-fil-A,Grilled Chicken Sandwich,Sandwich,310
+Chick-fil-A,Chick-fil-A Chicken Sandwich,Sandwich,440
+Chick-fil-A,Spicy Chicken Sandwich,Sandwich,450
+Chick-fil-A,Waffle Potato Fries,Side,460
+Chick-fil-A,Chocolate Chunk Cookie,Dessert,300
+Chick-fil-A,Chick-n-Minis (4),Breakfast,370
+Chick-fil-A,Hash Browns,Breakfast,240
+Chick-fil-A,Chick-fil-A Chicken Biscuit,Breakfast,440
+Chick-fil-A,Hot Buttered Biscuit,Breakfast,310
+Chick-fil-A,"Bacon, Egg & Cheese Biscuit",Breakfast,460
+Chick-fil-A,"Sausage, Egg & Cheese Biscuit",Breakfast,670
+Chick-fil-A,Hand Spun Milkshake (Small),Dessert,500
+Chick-fil-A,Hand Spun Milkshake (Large),Dessert,620
+Chick-fil-A,Frosted Lemonade (Small),Dessert,290
+Chick-fil-A,Frosted Lemonade (Large),Dessert,330
+Panda Express,Beijing Beef,Beef,470
+Panda Express,Black Pepper Chicken,Chicken,280
+Panda Express,Broccoli Beef,Beef,150
+Panda Express,Chicken Egg Roll,Appetizer,200
+Panda Express,Chocolate Chip Chunk Cookie,Cookie,300
+Panda Express,Chow Mein,Side,510
+Panda Express,Cream Cheese Rangoon,Appetizer,190
+Panda Express,Crispy Shrimp,Seafood,130
+Panda Express,Fried Rice,Side,520
+Panda Express,Honey Sesame Chicken Breast,Chicken,380
+Panda Express,Honey Walnut Shrimp,Seafood,360
+Panda Express,Kung Pao Chicken,Chicken,290
+Panda Express,Mixed Vegetables,Side,80
+Panda Express,Mixed Vegetables,Vegetables,120
+Panda Express,Mushroom Chicken,Chicken,170
+Panda Express,Orange Chicken,Chicken,380
+Panda Express,Shanghai Angus Steak,Beef,310
+Panda Express,String Bean Chicken Breast,Chicken,190
+Panda Express,SweetFire Chicken Breast,Chicken,380
+Panda Express,Teriyaki Chicken,Chicken,340
+Panda Express,Vegetable Spring Roll,Appetizer,190
+Panda Express,White Steamed Rice,Side,380
+Smoothie King ,Immune Builder (Orange) (Small),Immune Builders,390
+Smoothie King ,Immune Builder (Orange) (Medium),Immune Builders,540
+Smoothie King ,Immune Builder (Orange) (Large),Immune Builders,720
+Smoothie King ,Immune Builder (Mixed Berry) (Small),Immune Builders,310
+Smoothie King ,Immune Builder (Mixed Berry) (Medium),Immune Builders,465
+Smoothie King ,Immune Builder (Mixed Berry) (Large),Immune Builders,620
+Smoothie King ,Blueberry Heaven (Small),Wellness Blend,325
+Smoothie King ,Blueberry Heaven (Medium),Wellness Blend,487.5
+Smoothie King ,Blueberry Heaven (Large),Wellness Blend,650
+Smoothie King ,Acai Adventure (Small),Wellness Blend,450
+Smoothie King ,Acai Adventure (Medium),Wellness Blend,652.5
+Smoothie King ,Acai Adventure (Large),Wellness Blend,870
+Smoothie King ,Acai Adventure (Skinny) (Small),Wellness Blend,385
+Smoothie King ,Acai Adventure (Skinny) (Medium),Wellness Blend,577.5
+Smoothie King ,Acai Adventure (Skinny) (Large),Wellness Blend,770
+Smoothie King ,Berry Punch (Small),Wellness Blend,300
+Smoothie King ,Berry Punch (Medium),Wellness Blend,540
+Smoothie King ,Berry Punch (Large),Wellness Blend,720
+Smoothie King ,Mangosteen Madness (Small),Wellness Blend,380
+Smoothie King ,Mangosteen Madness (Medium),Wellness Blend,570
+Smoothie King ,Mangosteen Madness (Large),Wellness Blend,760
+Smoothie King ,Mangosteen Madness (Skinny) (Small),Wellness Blend,280
+Smoothie King ,Mangosteen Madness (Skinny) (Medium),Wellness Blend,420
+Smoothie King ,Mangosteen Madness (Skinny) (Large),Wellness Blend,560
+Smoothie King ,Apple Kiwi Kale (Small),Veggie Blend,277
+Smoothie King ,Apple Kiwi Kale (Medium),Veggie Blend,416
+Smoothie King ,Apple Kiwi Kale (Large),Veggie Blend,554
+Smoothie King ,Berry Carrot Dream (Small),Veggie Blend,278
+Smoothie King ,Berry Carrot Dream (Medium),Veggie Blend,417
+Smoothie King ,Berry Carrot Dream (Large),Veggie Blend,556
+Smoothie King ,Carrot Kale Dream (Small),Veggie Blend,222
+Smoothie King ,Carrot Kale Dream (Medium),Veggie Blend,333
+Smoothie King ,Carrot Kale Dream (Large),Veggie Blend,444
+Smoothie King ,Mango Dream (Small),Pure Recharge,290
+Smoothie King ,Mango Dream (Medium),Pure Recharge,430
+Smoothie King ,Mango Dream (Large),Pure Recharge,570
+Smoothie King ,Strawberry (Small),Pure Recharge,290
+Smoothie King ,Strawberry (Medium),Pure Recharge,430
+Smoothie King ,Strawberry (Large),Pure Recharge,570
+Smoothie King ,Raspberry Collider (Small),Wellness Blend,340
+Smoothie King ,Raspberry Collider (Medium),Wellness Blend,510
+Smoothie King ,Raspberry Collider (Large),Wellness Blend,680
+Smoothie King ,Mango Kale (Small),Meal Replacements,320
+Smoothie King ,Mango Kale (Medium),Meal Replacements,490
+Smoothie King ,Mango Kale (Large),Meal Replacements,640
+Smoothie King ,Dark Chocolate Banana (Small),Meal Replacements,330
+Smoothie King ,Dark Chocolate Banana (Medium),Meal Replacements,490
+Smoothie King ,Dark Chocolate Banana (Large),Meal Replacements,650
+Smoothie King ,Nutty Super Grain (Small),Meal Replacements,440
+Smoothie King ,Nutty Super Grain (Medium),Meal Replacements,660
+Smoothie King ,Nutty Super Grain (Large),Meal Replacements,880
+Smoothie King ,Green Tea Tango (Small),Meal Replacements,498
+Smoothie King ,Green Tea Tango (Medium),Meal Replacements,747
+Smoothie King ,Green Tea Tango (Large),Meal Replacements,996
+Smoothie King ,Banana Boat (Small),Meal Replacements,477
+Smoothie King ,Banana Boat (Medium),Meal Replacements,699
+Smoothie King ,Banana Boat (Large),Meal Replacements,954
+Smoothie King ,Yogurt D-Lite (Small),Meal Replacements,250
+Smoothie King ,Yogurt D-Lite (Medium),Meal Replacements,825
+Smoothie King ,Yogurt D-Lite (Large),Meal Replacements,1100
+Smoothie King ,Caribbean Way (Small),Take-A-Break Blends,395
+Smoothie King ,Caribbean Way (Medium),Take-A-Break Blends,595
+Smoothie King ,Caribbean Way (Large),Take-A-Break Blends,790
+Smoothie King ,Pineapple Surf (Small),Take-A-Break Blends,461
+Smoothie King ,Pineapple Surf (Medium),Take-A-Break Blends,737
+Smoothie King ,Pineapple Surf (Large),Take-A-Break Blends,922
+Smoothie King ,Strawberry-Kiwi Breeze (Small),Take-A-Break Blends,376
+Smoothie King ,Strawberry-Kiwi Breeze (Medium),Take-A-Break Blends,564
+Smoothie King ,Strawberry-Kiwi Breeze (Large),Take-A-Break Blends,752
+Smoothie King ,Peach Size Plus (Small),Take-A-Break Blends,400
+Smoothie King ,Peach Size Plus (Medium),Take-A-Break Blends,600
+Smoothie King ,Peach Size Plus (Large),Take-A-Break Blends,800
+Smoothie King ,Lemon Twist Strawberry (Small),Take-A-Break Blends,398
+Smoothie King ,Lemon Twist Strawberry (Medium),Take-A-Break Blends,597
+Smoothie King ,Lemon Twist Strawberry (Large),Take-A-Break Blends,796
+Smoothie King ,Passion Passport (Small),Take-A-Break Blends,390
+Smoothie King ,Passion Passport (Medium),Take-A-Break Blends,590
+Smoothie King ,Passion Passport (Large),Take-A-Break Blends,780
+Smoothie King ,Banana Berry Treat (Small),Take-A-Break Blends,360
+Smoothie King ,Banana Berry Treat (Medium),Take-A-Break Blends,540
+Smoothie King ,Banana Berry Treat (Large),Take-A-Break Blends,720
+Smoothie King ,Muscle Punch (Small),Take-A-Break Blends,360
+Smoothie King ,Muscle Punch (Medium),Take-A-Break Blends,540
+Smoothie King ,Muscle Punch (Large),Take-A-Break Blends,720
+Smoothie King ,Gladiator (Vanilla) (Small),Meal Replacements,730
+Smoothie King ,Gladiator (Vanilla) (Medium),Meal Replacements,990
+Smoothie King ,Gladiator (Vanilla) (Large),Meal Replacements,1240
+Smoothie King ,Gladiator (Chocolate) (Small),Meal Replacements,730
+Smoothie King ,Gladiator (Chocolate) (Medium),Meal Replacements,990
+Smoothie King ,Gladiator (Chocolate) (Large),Meal Replacements,1240
+Smoothie King ,Gladiator (Strawberry) (Small),Meal Replacements,730
+Smoothie King ,Gladiator (Strawberry) (Medium),Meal Replacements,990
+Smoothie King ,Gladiator (Strawberry) (Large),Meal Replacements,1240
+Smoothie King ,The Hulk (Vanilla) (Small),Meal Replacements,910
+Smoothie King ,The Hulk (Vanilla) (Medium),Meal Replacements,1360
+Smoothie King ,The Hulk (Vanilla) (Large),Meal Replacements,1810
+Smoothie King ,The Hulk (Chocolate) (Small),Meal Replacements,910
+Smoothie King ,The Hulk (Chocolate) (Medium),Meal Replacements,1360
+Smoothie King ,The Hulk (Chocolate) (Large),Meal Replacements,1810
+Smoothie King ,The Hulk (Strawberry) (Small),Meal Replacements,910
+Smoothie King ,The Hulk (Strawberry) (Medium),Meal Replacements,1360
+Smoothie King ,The Hulk (Strawberry) (Large),Meal Replacements,1810
+Smoothie King ,Coffee High Protein (Vanilla) (Small),Meal Replacements,420
+Smoothie King ,Coffee High Protein (Vanilla) (Medium),Meal Replacements,630
+Smoothie King ,Coffee High Protein (Vanilla) (Large),Meal Replacements,840
+Smoothie King ,Coffee High Protein (Almond Mocha) (Small),Meal Replacements,420
+Smoothie King ,Coffee High Protein (Almond Mocha) (Medium),Meal Replacements,630
+Smoothie King ,Coffee High Protein (Almond Mocha) (Large),Meal Replacements,840
+Smoothie King ,Original High Protein (Chocolate) (Small),Meal Replacements,420
+Smoothie King ,Original High Protein (Chocolate) (Medium),Meal Replacements,630
+Smoothie King ,Original High Protein (Chocolate) (Large),Meal Replacements,840
+Smoothie King ,Original High Protein (Banana) (Small),Meal Replacements,420
+Smoothie King ,Original High Protein (Banana) (Medium),Meal Replacements,630
+Smoothie King ,Original High Protein (Banana) (Large),Meal Replacements,840
+Smoothie King ,Original High Protein (Pineapple) (Small),Meal Replacements,420
+Smoothie King ,Original High Protein (Pineapple) (Medium),Meal Replacements,630
+Smoothie King ,Original High Protein (Pineapple) (Large),Meal Replacements,840
+Smoothie King ,Original High Protein (Lemon) (Small),Meal Replacements,420
+Smoothie King ,Original High Protein (Lemon) (Medium),Meal Replacements,630
+Smoothie King ,Original High Protein (Lemon) (Large),Meal Replacements,840
+Smoothie King ,The Activator (Strawberry Banana) (Small),Meal Replacements,270
+Smoothie King ,The Activator (Strawberry Banana) (Medium),Meal Replacements,410
+Smoothie King ,The Activator (Strawberry Banana) (Large),Meal Replacements,530
+Smoothie King ,The Activator (Pineapple) (Small),Meal Replacements,300
+Smoothie King ,The Activator (Pineapple) (Medium),Meal Replacements,450
+Smoothie King ,The Activator (Pineapple) (Large),Meal Replacements,600
+Smoothie King ,The Activator (Blueberry Strawberry) (Small),Meal Replacements,300
+Smoothie King ,The Activator (Blueberry Strawberry) (Medium),Meal Replacements,450
+Smoothie King ,The Activator (Blueberry Strawberry) (Large),Meal Replacements,600
+Smoothie King ,The Activator (Chocolate) (Small),Meal Replacements,220
+Smoothie King ,The Activator (Chocolate) (Medium),Meal Replacements,320
+Smoothie King ,The Activator (Chocolate) (Large),Meal Replacements,420
+Smoothie King ,Power Punch Plus (Small),Meal Replacements,430
+Smoothie King ,Power Punch Plus (Medium),Meal Replacements,640
+Smoothie King ,Power Punch Plus (Large),Meal Replacements,850
+Smoothie King ,Peanut Power Plus (Small),Meal Replacements,660
+Smoothie King ,Peanut Power Plus (Medium),Meal Replacements,1000
+Smoothie King ,Peanut Power Plus (Large),Meal Replacements,1320
+Smoothie King ,Lean1 (Small),Meal Replacements,340
+Smoothie King ,Lean1 (Medium),Meal Replacements,510
+Smoothie King ,Lean1 (Large),Meal Replacements,680
+Smoothie King ,Greek Yogurt (Strawberry Blueberry) (Small),Meal Replacements,310
+Smoothie King ,Greek Yogurt (Strawberry Blueberry) (Medium),Meal Replacements,490
+Smoothie King ,Greek Yogurt (Strawberry Blueberry) (Large),Meal Replacements,620
+Smoothie King ,Greek Yogurt (Pineapple Mango) (Small),Meal Replacements,290
+Smoothie King ,Greek Yogurt (Pineapple Mango) (Medium),Meal Replacements,440
+Smoothie King ,Greek Yogurt (Pineapple Mango) (Large),Meal Replacements,580
+Smoothie King ,Greek Yogurt (Peach Papaya) (Small),Meal Replacements,340
+Smoothie King ,Greek Yogurt (Peach Papaya) (Medium),Meal Replacements,510
+Smoothie King ,Greek Yogurt (Peach Papaya) (Large),Meal Replacements,680
+Smoothie King ,Slim-N-Trim (Small),Meal Replacements,250
+Smoothie King ,Slim-N-Trim (Medium),Meal Replacements,370
+Smoothie King ,Slim-N-Trim (Large),Meal Replacements,500
+Smoothie King ,The Shredder (Small),Meal Replacements,356
+Smoothie King ,The Shredder (Medium),Meal Replacements,534
+Smoothie King ,The Shredder (Large),Meal Replacements,712
+Smoothie King ,Angel Food (Small),Slim Blends,350
+Smoothie King ,Angel Food (Medium),Slim Blends,525
+Smoothie King ,Angel Food (Large),Slim Blends,700
+Smoothie King ,Island Impact (Small),Slim Blends,290
+Smoothie King ,Island Impact (Medium),Slim Blends,430
+Smoothie King ,Island Impact (Large),Slim Blends,570
+Smoothie King ,Mangofest (Small),Slim Blends,280
+Smoothie King ,Mangofest (Medium),Slim Blends,430
+Smoothie King ,Mangofest (Large),Slim Blends,570
+Smoothie King ,Strawberry X-Treme (Small),Slim Blends,320
+Smoothie King ,Strawberry X-Treme (Medium),Slim Blends,480
+Smoothie King ,Strawberry X-Treme (Large),Slim Blends,640
+Smoothie King ,Diet Down,Additionals,15
+Smoothie King ,Energy Boost,Additionals,20
+Smoothie King ,Fiber Blend,Additionals,15
+Smoothie King ,Herbal Immune,Additionals,30
+Smoothie King ,Multi-Vitamin,Additionals,20
+Smoothie King ,Muscle Builder,Additionals,5
+Smoothie King ,Probiotic,Additionals,5
+Smoothie King ,Pure Recharge,Additionals,0
+Smoothie King ,Super Grains,Additionals,30
+Smoothie King ,Almond Milk,Additionals,5
+Smoothie King ,Almonds,Additionals,100
+Smoothie King ,Butter Pecan Ice Cream,Additionals,180
+Smoothie King ,Cocoa,Additionals,20
+Smoothie King ,Coconut Water,Additionals,10
+Smoothie King ,Cold Brew Coffee,Additionals,5
+Smoothie King ,Frozen Yogurt,Additionals,120
+Smoothie King ,Matcha Green Tea,Additionals,5
+Smoothie King ,Oikos' Non-Fat Greek Yogurt,Additionals,40
+Smoothie King ,Peanut Butter,Additionals,250
+Smoothie King ,Apple Juice,Additionals,110
+Smoothie King ,Bananas,Additionals,70
+Smoothie King ,Blueberry Juice Blend,Additionals,110
+Smoothie King ,Carrots,Additionals,15
+Smoothie King ,Kale,Additionals,10
+Smoothie King ,Kiwi Juice Blend,Additionals,130
+Smoothie King ,Lemon Juice Blend,Additionals,110
+Smoothie King ,Mangoes,Additionals,50
+Smoothie King ,Mangosteen Juice Blend,Additionals,110
+Smoothie King ,Orange Juice,Additionals,110
+Smoothie King ,Papaya Juice Blend,Additionals,70
+Smoothie King ,Passion Fruit Blend,Additionals,120
+Smoothie King ,Peaches,Additionals,90
+Smoothie King ,Pineapple ,Additionals,45
+Smoothie King ,Raspberry Puree,Additionals,90
+Smoothie King ,Strawberries,Additionals,140
+Insomnia Cookies,Chocolate Chunk Cookie,Cookie,125
+Insomnia Cookies,Double Chocolate Chunk Cookie,Cookie,250
+Insomnia Cookies,Double Chocolate Mint Cookie,Cookie,250
+Insomnia Cookies,M&M Cookie,Cookie,125
+Insomnia Cookies,Oatmeal Raisin Cookie,Cookie,230
+Insomnia Cookies,Peanut Butter Chip Cookie,Cookie,280
+Insomnia Cookies,White Chocolate Macadamia Cookie,Cookie,270
+Insomnia Cookies,Snickerdoodle Cookie,Cookie,180
+Insomnia Cookies,Sugar Cookie,Cookie,190
+Insomnia Cookies,Deluxe Triple Chocolate Chunk Cookie,Cookie,570
+Insomnia Cookies,Deluxe Reese's Peanut Butter Cup Cookie,Cookie,630
+Insomnia Cookies,Deluxe Smores Cookie,Cookie,540
+Insomnia Cookies,Chocolate Chip Brownie,Brownie,500
+Starbucks,Caramel Macchiato (Small),Espresso and Tea,180
+Starbucks,Caramel Macchiato (Medium),Espresso and Tea,240
+Starbucks,Caramel Macchiato (Large),Espresso and Tea,300
+Starbucks,White Chocolate Mocha (Small),Espresso and Tea,370
+Starbucks,White Chocolate Mocha (Small),Espresso and Tea,470
+Starbucks,White Chocolate Mocha (Small),Espresso and Tea,580
+Starbucks,Caffe Latte (Small),Espresso and Tea,150
+Starbucks,Caffe Latte (Medium),Espresso and Tea,190
+Starbucks,Caffe Latte (Large),Espresso and Tea,240
+Starbucks,Cappuccino,Espresso and Tea,90
+Starbucks,Cappuccino,Espresso and Tea,120
+Starbucks,Cappuccino,Espresso and Tea,150
+Starbucks,Caffe Mocha,Espresso and Tea,270
+Starbucks,Caffe Mocha,Espresso and Tea,330
+Starbucks,Caffe Mocha,Espresso and Tea,410
+Starbucks,Caffe Americano,Espresso and Tea,10
+Starbucks,Caffe Americano,Espresso and Tea,15
+Starbucks,Caffe Americano,Espresso and Tea,25
+Starbucks,Coffee,Espresso and Tea,5
+Starbucks,Iced Coffee,Espresso and Tea,60
+Starbucks,Iced Coffee,Espresso and Tea,90
+Starbucks,Iced Coffee,Espresso and Tea,130
+Starbucks,Chai Tea Latte,Espresso and Tea,180
+Starbucks,Chai Tea Latte,Espresso and Tea,240
+Starbucks,Chai Tea Latte,Espresso and Tea,300
+Starbucks,Iced Tea,Espresso and Tea,60
+Starbucks,Iced Tea,Espresso and Tea,80
+Starbucks,Iced Tea,Espresso and Tea,130
+Starbucks,Iced Tea Lemonade,Espresso and Tea,100
+Starbucks,Iced Tea Lemonade,Espresso and Tea,130
+Starbucks,Iced Tea Lemonade,Espresso and Tea,190
+Starbucks,Espresso,Espresso and Tea,5
+Starbucks,Pumpkin Spice Latte (Tall),Seasonal,300
+Starbucks,Pumpkin Spice Latte (Grande),Seasonal,380
+Starbucks,Pumpkin Spice Latte (Super Grande),Seasonal,470
+Starbucks,Pumpkin Spice Frappuccino® (Tall),Seasonal,300
+Starbucks,Pumpkin Spice Frappuccino® (Grande),Seasonal,450
+Starbucks,Pumpkin Spice Frappuccino® (Super Grande),Seasonal,500
+Starbucks,Salted Caramel Mocha (Tall),Seasonal,250
+Starbucks,Salted Caramel Mocha (Grande),Seasonal,330
+Starbucks,Salted Caramel Mocha (Super Grande),Seasonal,420
+Starbucks,Salted Caramel Frappuccino® (Tall),Seasonal,320
+Starbucks,Salted Caramel Frappuccino® (Grande),Seasonal,430
+Starbucks,Salted Caramel Frappuccino® (Super Grande),Seasonal,550
+Starbucks,Coffee Frappuccino® (Tall),Blended Beverage,180
+Starbucks,Coffee Frappuccino® (Grande),Blended Beverage,240
+Starbucks,Coffee Frappuccino® (Super Grande),Blended Beverage,340
+Starbucks,Mocha Frappuccino® (Tall),Blended Beverage,280
+Starbucks,Mocha Frappuccino® (Grande),Blended Beverage,380
+Starbucks,Mocha Frappuccino® (Super Grande),Blended Beverage,500
+Starbucks,Caramel Frappuccino® (Tall),Blended Beverage,300
+Starbucks,Caramel Frappuccino® (Grande),Blended Beverage,410
+Starbucks,Caramel Frappuccino® (Super Grande),Blended Beverage,510
+Starbucks,Caffe Vanilla Frappuccino® (Tall),Blended Beverage,320
+Starbucks,Caffe Vanilla Frappuccino® (Grande),Blended Beverage,430
+Starbucks,Caffe Vanilla Frappuccino® (Super Grande),Blended Beverage,560
+Starbucks,Java Chip Frappuccino® (Tall),Blended Beverage,340
+Starbucks,Java Chip Frappuccino® (Grande),Blended Beverage,460
+Starbucks,Java Chip Frappuccino® (Super Grande),Blended Beverage,600
+Starbucks,Strawberries & Creme Frappuccino® (Tall),Blended Beverage,370
+Starbucks,Strawberries & Creme Frappuccino® (Grande),Blended Beverage,470
+Starbucks,Strawberries & Creme Frappuccino® (Super Grande),Blended Beverage,600
+Starbucks,Vanilla Bean Creme Frappuccino® (Tall),Blended Beverage,340
+Starbucks,Vanilla Bean Creme Frappuccino® (Grande),Blended Beverage,440
+Starbucks,Vanilla Bean Creme Frappuccino® (Super Grande),Blended Beverage,580
+Starbucks,Tazo® Chai Tea Frappuccino® (Tall),Blended Beverage,340
+Starbucks,Tazo® Chai Tea Frappuccino® (Grande),Blended Beverage,440
+Starbucks,Tazo® Chai Tea Frappuccino® (Super Grande),Blended Beverage,580
+Starbucks,Double Chocolaty Chip Creme Frappuccino® (Tall),Blended Beverage,380
+Starbucks,Double Chocolaty Chip Creme Frappuccino® (Grande),Blended Beverage,510
+Starbucks,Double Chocolaty Chip Creme Frappuccino® (Super Grande),Blended Beverage,670
+Starbucks,Green Tea Creme Frappuccino® (Tall),Blended Beverage,320
+Starbucks,Green Tea Creme Frappuccino® (Grande),Blended Beverage,430
+Starbucks,Green Tea Creme Frappuccino® (Super Grande),Blended Beverage,550
+Starbucks,Strawberry Banana Real Fruit Smoothie,Blended Beverage,270
+Starbucks,Banana Chocolate Smoothie 2,Blended Beverage,270
+Starbucks,Affogato,Blended Beverage,15
+Starbucks,HERSHEY'S® Cheesecake,Bakery,640
+Starbucks,Red Velvet Cheesecake,Bakery,780
+Starbucks,Plain Cheesecake,Bakery,550
+Starbucks,Blueberries & Cream Cheesecake,Bakery,660
+Starbucks,Pumpkin Cheesecake,Bakery,550
+Starbucks,Ginger Cookie,Bakery,440
+Starbucks,OREO® Stack,Bakery,570
+Starbucks,Spiced Pumpkin Muffin,Bakery,500
+Starbucks,Maple Walnut Scone,Bakery,460
+Starbucks,Meyer Lemon Bar,Bakery,360
+Starbucks,Pumpkin Cupcake,Bakery,450
+Starbucks,Velvet Cupcake,Bakery,540
+Starbucks,Classic Vanilla Cupcake,Bakery,480
+Starbucks,Chocolate Cupcake,Bakery,440
+Starbucks,Chocolate Chunk Cookies,Bakery,490
+Starbucks,Oatmeal Raisin Cookie,Bakery,430
+Starbucks,Butter Sugar Cookie,Bakery,480
+Starbucks,Peanut Butter Cookie made with Reese's®,Bakery,500
+Starbucks,Blueberry Scone,Bakery,390
+Starbucks,Cinnamon Scone,Bakery,470
+Starbucks,Rice Krispy Bar,Bakery,280
+Starbucks,Triple Chocolate Brownie,Bakery,420
+Starbucks,Blondie made with M&M's®,Bakery,460
+Starbucks,Blueberry Muffin,Bakery,480
+Starbucks,Turkey Chipotle Sandwich,Café Specialties,520
+Starbucks,Philly Cheesesteak,Café Specialties,420
+Starbucks,Farmer's Wrap,Café Specialties,360
+Starbucks,Tomato Caprese,Café Specialties,630
+Starbucks,Chicken Club,Café Specialties,530
+Starbucks,Turkey & Brie,Café Specialties,450
+Starbucks,Broccoli Cheddar Soup,Café Specialties,190
+Starbucks,Roasted Chicken Noodle Soup,Café Specialties,80
+Starbucks,Italian Wedding,Café Specialties,90
+Starbucks,Corn Chowder Soup,Café Specialties,278
+Starbucks,Potato And Bacon Soup,Café Specialties,90
+Starbucks,Cheesy Chicken Tortilla Soup,Café Specialties,160
+Starbucks,Timberline Chili,Café Specialties,250
+Starbucks,Chicken Pot Pie Soup,Café Specialties,360
+Starbucks,Beef Steak and Black Bean Soup,Café Specialties,300
+Starbucks,Mediterranean Lentil Soup,Café Specialties,260
+Starbucks,Tomato Basil Soup,Café Specialties,140
+Starbucks,Wisconsin Cheese Soup,Café Specialties,240
+Starbucks,Harvest Grain w/ Portabella Mushrooms,Café Specialties,300
+Starbucks,Broccoli Cheddar Quiche,Café Specialties,530
+Starbucks,Grilled Spinach & Feta Pretzel,Café Specialties,400
+Starbucks,Stuffed Pizza Pretzel,Café Specialties,390
+CC's Coffee House,Cappuccino (Tall),Espresso Classics,170
+CC's Coffee House,Cappuccino (Grande),Espresso Classics,220
+CC's Coffee House,Cappuccino (Super Grande),Espresso Classics,270
+CC's Coffee House,Latte (Tall),Espresso Classics,170
+CC's Coffee House,Latte (Grande),Espresso Classics,220
+CC's Coffee House,Latte (Super Grande),Espresso Classics,270
+CC's Coffee House,Vanilla Latte (Tall),Espresso Classics,430
+CC's Coffee House,Vanilla Latte (Grande),Espresso Classics,530
+CC's Coffee House,Vanilla Latte (Super Grande),Espresso Classics,660
+CC's Coffee House,Mocha (Tall),Espresso Classics,300
+CC's Coffee House,Mocha (Grande),Espresso Classics,390
+CC's Coffee House,Mocha (Super Grande),Espresso Classics,480
+CC's Coffee House,Espresso #22 (Tall),Espresso Classics,310
+CC's Coffee House,Espresso #22 (Grande),Espresso Classics,450
+CC's Coffee House,Espresso #22 (Super Grande),Espresso Classics,590
+CC's Coffee House,Iced Latte (Tall),Espresso Classics,140
+CC's Coffee House,Iced Latte (Grande),Espresso Classics,190
+CC's Coffee House,Iced Latte (Super Grande),Espresso Classics,270
+CC's Coffee House,Iced Mocha (Tall),Espresso Classics,270
+CC's Coffee House,Iced Mocha (Grande),Espresso Classics,360
+CC's Coffee House,Iced Mocha (Super Grande),Espresso Classics,480
+CC's Coffee House,Hot Chocolate (Tall),Espresso Classics,310
+CC's Coffee House,Hot Chocolate (Grande),Espresso Classics,415
+CC's Coffee House,Hot Chocolate (Super Grande),Espresso Classics,520
+CC's Coffee House,Classic Cold Brew (Tall),Cold Brew,50
+CC's Coffee House,Classic Cold Brew (Grande),Cold Brew,60
+CC's Coffee House,Classic Cold Brew (Super Grande),Cold Brew,80
+CC's Coffee House,Flavored Cold Brew (Tall),Cold Brew,70
+CC's Coffee House,Flavored Cold Brew (Grande),Cold Brew,80
+CC's Coffee House,Flavored Cold Brew (Super Grande),Cold Brew,100
+CC's Coffee House,Flavored Hot Tea (Tall),Tea,20
+CC's Coffee House,Flavored Hot Tea (Grande),Tea,40
+CC's Coffee House,Flavored Hot Tea (Super Grande),Tea,60
+CC's Coffee House,Flavored Iced Tea (Tall),Tea,20
+CC's Coffee House,Flavored Iced Tea (Grande),Tea,40
+CC's Coffee House,Flavored Iced Tea (Super Grande),Tea,60
+CC's Coffee House,CC's Mochasippi (Tall),Frozen Favorites,280
+CC's Coffee House,CC's Mochasippi (Grande),Frozen Favorites,420
+CC's Coffee House,CC's Mochasippi (Super Grande),Frozen Favorites,550
+CC's Coffee House,CC's Turtle Mochasippi (Tall),Frozen Favorites,250
+CC's Coffee House,CC's Turtle Mochasippi (Grande),Frozen Favorites,350
+CC's Coffee House,CC's Turtle Mochasippi (Super Grande),Frozen Favorites,490
+CC's Coffee House,Smoothie (Tall),Frozen Favorites,170
+CC's Coffee House,Smoothie (Grande),Frozen Favorites,270
+CC's Coffee House,Smoothie (Super Grande),Frozen Favorites,450
+CC's Coffee House,Fresh Brewed Coffee (Tall),Fresh Brewed Coffee,0
+CC's Coffee House,Fresh Brewed Coffee (Grande),Fresh Brewed Coffee,0
+CC's Coffee House,Fresh Brewed Coffee (Super Grande),Fresh Brewed Coffee,5
+CC's Coffee House,Cafe Au Lait (Tall),Fresh Brewed Coffee,90
+CC's Coffee House,Cafe Au Lait (Grande),Fresh Brewed Coffee,120
+CC's Coffee House,Cafe Au Lait (Super Grande),Fresh Brewed Coffee,160
+Build Pizza by Design,Cheese Pizza,Pizza,0
+Build Pizza by Design,Italian Sausage Pizza,Pizza,0
+Build Pizza by Design,Caprese Pizza,Pizza,0
+Build Pizza by Design,Steak and Bleu Cheeze Pizza,Pizza,0
+Build Pizza by Design,Red Sauce,Sauce,0
+Build Pizza by Design,Fromage Blanc,Sauce,0
+Build Pizza by Design,Pesto,Sauce,0
+Build Pizza by Design,Italian Sausage,Topping,0
+Build Pizza by Design,Pepperoni,Topping,0
+Build Pizza by Design,Salami,Topping,0
+Build Pizza by Design,Boudin,Topping,0
+Build Pizza by Design,Grilled Chicken,Topping,0
+Build Pizza by Design,Bacon,Topping,0
+Build Pizza by Design,Andoulle,Topping,0
+Build Pizza by Design,Capers,Topping,0
+Build Pizza by Design,Kalamata Olive,Topping,0
+Build Pizza by Design,Artichoke Heart,Topping,0
+Build Pizza by Design,Roma Tomato,Topping,0
+Build Pizza by Design,Red Onion,Topping,0
+Build Pizza by Design,Caramelized Onion,Topping,0
+Build Pizza by Design,Roasted Fennel Relish,Topping,0
+Build Pizza by Design,Roasted Red Pepper,Topping,0
+Build Pizza by Design,Roasted Garlic,Topping,0
+Build Pizza by Design,Pineapple,Topping,0
+Build Pizza by Design,Cherry Tomato,Topping,0
+Build Pizza by Design,Jalapenos,Topping,0
+Build Pizza by Design,Pepperoncini,Topping,0
+Build Pizza by Design,Yellow Bell Pepper,Topping,0
+Build Pizza by Design,Fresh Mozzarella,Topping,0
+Build Pizza by Design,Provolene,Topping,0
+Build Pizza by Design,Feta Bleu Cheese,Topping,0
+Build Pizza by Design,Ricotta,Topping,0
+Build Pizza by Design,Parmesan,Topping,0
+Build Pizza by Design,Portabella Mushrooms,Topping,0
+Build Pizza by Design,Fresh Herb Mix,Toppers,0
+Build Pizza by Design,Basil,Toppers,0
+Build Pizza by Design,Arugula,Toppers,0
+Build Pizza by Design,Spinach,Toppers,0
+Build Pizza by Design,Parmesan,Toppers,0
+Build Pizza by Design,Balasmic Reduction Kale,Toppers,0
+Build Pizza by Design,Ancho BBQ Sauce,Toppers,0
+Build Pizza by Design,Pesto,Toppers,0
+Build Pizza by Design,Chipotle Avocado Creme,Toppers,0
+Build Pizza by Design,Red Wine Vinegar Gastriq,Toppers,0
+Build Pizza by Design,Buffalo Sauce,Toppers,0
+Build Pizza by Design,Tomato Ranch,Toppers,0
+Build Pizza by Design,Garlic Sesame,Toppers,0
+Build Pizza by Design,Srirachi Chili Sauce,Toppers,0
+Build Pizza by Design,Olive Oil,Toppers,0
+Build Pizza by Design,Red Pepper Flakes,Toppers,0

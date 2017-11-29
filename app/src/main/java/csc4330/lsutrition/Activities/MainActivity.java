@@ -12,7 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import java.util.*;
+import java.io.*;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -48,11 +49,30 @@ public class MainActivity extends AppCompatActivity implements RestaurantNameAda
             googleSignInActionButton.setVisibility(View.GONE);
         }
         //set up formatting for the recylcer view
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         restaurantRecyclerView.setLayoutManager(layoutManager);
         restaurantRecyclerView.setHasFixedSize(true);
-
-        restaurantNameAdapter = new RestaurantNameAdapter(FakeDataUtils.generateRestaurantNames(),this);
+        InputStream inputStream = getResources().openRawResource(R.raw.values);
+        CSVFile csvFile = new CSVFile(inputStream);
+        List<String[]> restaurants = csvFile.read();
+        int i = 0;
+        System.out.println(restaurants.size());
+        for (int j = 2; j < restaurants.size(); j++) {
+             if (restaurants.get(j)[0].equals(restaurants.get(j - 1)[0])) continue;
+                else i++;
+        }
+        String[] rests = new String[i];
+        int r = 0;
+        for (int k = 2; k < restaurants.size(); k++) {
+                if (restaurants.get(k)[0].equals(restaurants.get(k - 1)[0])) continue;
+                else {
+                    rests[r] = restaurants.get(k)[0];
+                    System.out.println(rests[r]);
+                    r++;
+                }
+        }
+        restaurantNameAdapter = new RestaurantNameAdapter(rests,this);
         restaurantRecyclerView.setAdapter(restaurantNameAdapter);
         //constructs the premade view that google uses to sign someone in
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
