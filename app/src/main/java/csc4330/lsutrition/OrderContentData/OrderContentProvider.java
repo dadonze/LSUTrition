@@ -26,6 +26,10 @@ public class OrderContentProvider extends ContentProvider {
     private static final UriMatcher orderUriMatcher = buildUriMatcher();
     private OrderDbHelper orderDbHelper;
 
+    /**
+     * constructs a UriMatcher, which maps Uri paths to integer values
+     * @return - a new Uri matcher with defined uri paths
+     */
     public static UriMatcher buildUriMatcher() {
 
         // Initialize a UriMatcher with no matches by passing in NO_MATCH to the constructor
@@ -42,6 +46,11 @@ public class OrderContentProvider extends ContentProvider {
 
         return uriMatcher;
     }
+
+    /**
+     * Called whenever the contentProvider is created, initializing values
+     * @return - true to indicate successful building of the content provider
+     */
     @Override
     public boolean onCreate() {
         Context context = getContext();
@@ -49,6 +58,15 @@ public class OrderContentProvider extends ContentProvider {
         return true;
     }
 
+    /**
+     * Queries the local database with the matched Uri path
+     * @param uri - the path to query
+     * @param strings - search parameters (required by signature)
+     * @param s - search parameters (required by signature)
+     * @param strings1 - search parameters (required by signature)
+     * @param s1 - search parameters (required by signature)
+     * @return - the Cursor object that stores the queried data
+     */
     @Nullable
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] strings, @Nullable String s, @Nullable String[] strings1, @Nullable String s1) {
@@ -83,12 +101,23 @@ public class OrderContentProvider extends ContentProvider {
         return retCursor;
     }
 
+    /**
+     * non-implemented method (required by parent class)
+     * @param uri
+     * @return
+     */
     @Nullable
     @Override
     public String getType(@NonNull Uri uri) {
         return null;
     }
 
+    /**
+     * inserts an item into the local database
+     * @param uri - the uri path of insertion
+     * @param contentValues - the values to be inserted at the path
+     * @return - the uri path to the new row of data
+     */
     @Nullable
     @Override
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues contentValues) {
@@ -126,11 +155,26 @@ public class OrderContentProvider extends ContentProvider {
 
     }
 
+    /**
+     * non-implemented method (required by parent class)
+      * @param uri
+     * @param s
+     * @param strings
+     * @return
+     */
     @Override
     public int delete(@NonNull Uri uri, @Nullable String s, @Nullable String[] strings) {
         return 0;
     }
 
+    /**
+     * non-implemented method (required by parent class)
+     * @param uri
+     * @param contentValues
+     * @param s
+     * @param strings
+     * @return
+     */
     @Override
     public int update(@NonNull Uri uri, @Nullable ContentValues contentValues, @Nullable String s, @Nullable String[] strings) {
         return 0;

@@ -11,17 +11,22 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.GregorianCalendar;
 
 import csc4330.lsutrition.Adapters.CheckoutListAdapter;
 import csc4330.lsutrition.OrderContentData.OrderContract;
 import csc4330.lsutrition.R;
 import csc4330.lsutrition.User_Order_Cart;
 
-public class Finish_Order_Activity extends AppCompatActivity {
+public class Finish_Order_Activity extends AppCompatActivity implements CheckoutListAdapter.deleteItemClickListener {
     User_Order_Cart cart;
     RecyclerView recyclerView;
     CheckoutListAdapter checkoutListAdapter;
+    TextView calView;
     /**
      Android System Action called whenever the corresponding layout is inflated (activity launched, phone rotated, ect.)
      Actions taken are all setup required for the app interface to work
@@ -43,11 +48,11 @@ public class Finish_Order_Activity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
 
-         checkoutListAdapter = new CheckoutListAdapter();
+         checkoutListAdapter = new CheckoutListAdapter(this);
         recyclerView.setAdapter(checkoutListAdapter);
 
-        TextView textView = (TextView) findViewById(R.id.order_total_calories);
-        textView.setText(String.valueOf(cart.getTotalCalories())); //displays the total calorie count of the users order
+        calView = (TextView) findViewById(R.id.order_total_calories);
+        calView.setText(String.valueOf(cart.getTotalCalories())); //displays the total calorie count of the users order
     }
     /**
      Handles click events on the menu options
@@ -71,19 +76,33 @@ public class Finish_Order_Activity extends AppCompatActivity {
      * @param view - reference to the view of the button that called this function (required by signature)
      */
     public void finishOrder(View view){
-        cart.checkOut();//cart handles self deletion
-        ContentValues contentValues = new ContentValues();
+        if(cart.getTotalCalories() > 0)
+        {
+            ContentValues contentValues = new ContentValues();
+            GregorianCalendar calendar = new GregorianCalendar();
 
-        contentValues.put(OrderContract.OrderEntry.COLUMN_ORDER_CALORIES, cart.getTotalCalories());//formats data into an object that can be sent to a local database
-        try {
-            Uri uri = getContentResolver().insert(OrderContract.OrderEntry.CONTENT_URI, contentValues);//inserts data into the database
-        } catch (Exception e){
-            e.printStackTrace();//Exception catching here prevents app crashing and allows for debugging
+            contentValues.put(OrderContract.OrderEntry.COLUMN_ORDER_CALORIES, cart.getTotalCalories());//formats data into an object that can be sent to a local database
+            contentValues.put(OrderContract.OrderEntry.COLUMN_ORDER_TIME, calendar.getTime().toString());
+            try {
+                Uri uri = getContentResolver().insert(OrderContract.OrderEntry.CONTENT_URI, contentValues);//inserts data into the database
+            } catch (Exception e) {
+                e.printStackTrace();//Exception catching here prevents app crashing and allows for debugging
+            }
+            cart.checkOut();//cart handles self deletion
         }
-
         finish();//finishes activity and returns to the previous one
     }
-    public void deleteItem(View view){
 
+    /**
+     * Whenever the user clicks the X box next to an item, it is deleted from their order
+     * @param clickedItemIndex - the index of the viewholder clicked, corresponding to the index of the item in the cart
+     * @param view - a reference to the view clicked.
+     */
+    @Override
+    public void onDeleteItemClick(int clickedItemIndex, View view) {
+        cart.removeitem(clickedItemIndex);
+        checkoutListAdapter = new CheckoutListAdapter(this);
+        recyclerView.setAdapter(checkoutListAdapter);
+        calView.setText(String.valueOf(cart.getTotalCalories()));
     }
 }
