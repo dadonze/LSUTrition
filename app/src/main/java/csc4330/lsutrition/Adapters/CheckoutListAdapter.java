@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import csc4330.lsutrition.R;
@@ -17,21 +18,27 @@ import csc4330.lsutrition.User_Order_Cart;
 
 public class CheckoutListAdapter extends RecyclerView.Adapter<CheckoutListAdapter.CheckoutViewHolder> {
     User_Order_Cart cart;
+    deleteItemClickListener listener;
+    //private int
 
     /**
      * Constructor for the CheckoutListAdapter, initializes the cart
      */
-    public CheckoutListAdapter(){
+    public CheckoutListAdapter(deleteItemClickListener deleteItemClickListener){
+
         cart = User_Order_Cart.createUser_Order_Cart();
+        listener = deleteItemClickListener;
     }
 
-    /**
+
+    public interface deleteItemClickListener {
+        void onDeleteItemClick(int clickedItemIndex, View view);
+    }/**
      * Called to create a new viewholder within the recyclerView, handling its setup
      * @param parent - parent view of all viewholders(RecyclerView in this case)
      * @param viewType - id of the ViewHolder type, used if more than one Viewholder can populate a RecyclerView
      * @return the newly created checkoutViewHolder
      */
-
     @Override
     public CheckoutViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
@@ -64,6 +71,8 @@ public class CheckoutListAdapter extends RecyclerView.Adapter<CheckoutListAdapte
     class CheckoutViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView restaurantItemTextView;
         TextView restaurantCalorieTextView;
+        ImageButton deleteItemButton;
+
         /**
             Overriden Constructor for the Viewholder, obtains references to the xml elements in its elements
             @param view: reference to the xml layout for the individual item
@@ -73,6 +82,8 @@ public class CheckoutListAdapter extends RecyclerView.Adapter<CheckoutListAdapte
             super(view);
             restaurantItemTextView =(TextView) view.findViewById(R.id.checkout_item__name_RV);
             restaurantCalorieTextView = (TextView) view.findViewById(R.id.checkout_item_calorie_RV);
+            deleteItemButton = view.findViewById(R.id.checkout_item_delete_button_RV);
+            deleteItemButton.setOnClickListener(this);
             //itemView.setOnClickListener(this);
         }
         /**
@@ -84,6 +95,8 @@ public class CheckoutListAdapter extends RecyclerView.Adapter<CheckoutListAdapte
             restaurantItemTextView.setText(item.getName());
             String calorieText = "Calories: " + String.valueOf(item.getCalories());
             restaurantCalorieTextView.setText(calorieText);
+
+
         }
         /**
             Click handler for when a viewHolder is clicked (Required by parent class)
@@ -91,8 +104,8 @@ public class CheckoutListAdapter extends RecyclerView.Adapter<CheckoutListAdapte
          */
         @Override
         public void onClick(View view) {
-
-
+            listener.onDeleteItemClick(getAdapterPosition(),view);
         }
+
     }
 }

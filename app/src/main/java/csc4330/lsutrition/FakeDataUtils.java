@@ -1,21 +1,18 @@
 package csc4330.lsutrition;
 
+
 /**
- * Created by Danny on 11/22/2017.
- */
-/*
     FakeDataUtils is a utility class designed for assiting in debugging and providing a safety net in the event
     of a Server or Internet issue during the presentation
  */
 public class FakeDataUtils {
-
-    public static String[] generateData(){
-        String[] data = new String[25];
-        for (int i = 0; i < 10;i++){
-            data[i] = "Restaurant " + i;
+    /**
+     * generates a fake McDonalds menu used for testing/demonstration
+     * @return an array of fake restaurant menu data
+     */
+        public static String[] generateData(){
+            return new String[25];
         }
-        return data;
-    }
     public static RestaurantMenuItem[] generateFakeMenu()
     {
         RestaurantMenuItem[] data = new RestaurantMenuItem[8];
