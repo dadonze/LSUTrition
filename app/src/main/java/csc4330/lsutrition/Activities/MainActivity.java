@@ -18,7 +18,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 
+import java.io.InputStream;
+import java.util.List;
+
 import csc4330.lsutrition.Adapters.RestaurantNameAdapter;
+import csc4330.lsutrition.CSVFile;
 import csc4330.lsutrition.FakeDataUtils;
 import csc4330.lsutrition.R;
 
@@ -52,8 +56,29 @@ public class MainActivity extends AppCompatActivity implements RestaurantNameAda
         restaurantRecyclerView.setLayoutManager(layoutManager);
         restaurantRecyclerView.setHasFixedSize(true);
 
-        restaurantNameAdapter = new RestaurantNameAdapter(FakeDataUtils.generateRestaurantNames(),this);
+        InputStream inputStream = getResources().openRawResource(R.raw.values);
+        CSVFile csvFile = new CSVFile(inputStream);
+        List<String[]> restaurants = csvFile.read();
+        int i = 0;
+        System.out.println(restaurants.size());
+        for (int j = 2; j < restaurants.size(); j++) {
+            if (restaurants.get(j)[0].equals(restaurants.get(j - 1)[0])) continue;
+            else i++;
+        }
+        String[] rests = new String[i];
+        int r = 0;
+        for (int k = 2; k < restaurants.size(); k++) {
+            if (restaurants.get(k)[0].equals(restaurants.get(k - 1)[0])) continue;
+            else {
+                rests[r] = restaurants.get(k)[0];
+                System.out.println(rests[r]);
+                r++;
+            }
+        }
+        restaurantNameAdapter = new RestaurantNameAdapter(rests,this);
         restaurantRecyclerView.setAdapter(restaurantNameAdapter);
+        //restaurantNameAdapter = new RestaurantNameAdapter(FakeDataUtils.generateRestaurantNames(),this);
+       // restaurantRecyclerView.setAdapter(restaurantNameAdapter);
         //constructs the premade view that google uses to sign someone in
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -71,8 +96,6 @@ public class MainActivity extends AppCompatActivity implements RestaurantNameAda
     @Override
     public void onRestaurantNameClick(int clickedItemIndex, View view) {
         TextView textView= (TextView) view.findViewById(R.id.tv_restaurant_name_RV_item_display);
-        String toastMessage = "Clicked " + textView.getText().toString() + " " + clickedItemIndex;
-        Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show();
         Intent intent = new Intent(MainActivity.this,restaurant_menu_activity.class); // create a new intent to the menu activity
         intent.putExtra("Restaurant Name",textView.getText().toString()); // puts the name of the restaurant in the intent, allowing us to specify which menu to query in the menu
         startActivity(intent);

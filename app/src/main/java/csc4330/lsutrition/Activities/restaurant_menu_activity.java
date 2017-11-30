@@ -15,9 +15,14 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.InputStream;
+import java.util.List;
+
 import csc4330.lsutrition.Adapters.RestaurantMenuAdapter;
+import csc4330.lsutrition.CSVFile;
 import csc4330.lsutrition.FakeDataUtils;
 import csc4330.lsutrition.R;
+import csc4330.lsutrition.RestaurantMenuItem;
 
 public class restaurant_menu_activity extends AppCompatActivity implements RestaurantMenuAdapter.RestaurantMenuItemClickListener {
 
@@ -51,8 +56,28 @@ public class restaurant_menu_activity extends AppCompatActivity implements Resta
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);//enables the back button
         }
-        restaurantMenuAdapter = new RestaurantMenuAdapter(FakeDataUtils.generateFakeMenu(restaurantName),this);
+        InputStream inputStream = getResources().openRawResource(R.raw.values);
+        CSVFile csvFile = new CSVFile(inputStream);
+        List<String[]> restaurants = csvFile.read();
+        int i = 0;
+        System.out.println(restaurants.size());
+        for (int j = 2; j < restaurants.size(); j++) {
+            if (!restaurants.get(j)[0].equals(restaurantName)) continue;
+            else i++;
+        }
+        RestaurantMenuItem[] rests = new RestaurantMenuItem[i];
+        int r = 0;
+        for (int k = 2; k < restaurants.size(); k++) {
+            if (!restaurants.get(k)[0].equals(restaurantName)) continue;
+            else {
+                rests[r] = new RestaurantMenuItem(restaurants.get(k)[1], Float.parseFloat(restaurants.get(k)[3]));
+                r++;
+            }
+        }
+        restaurantMenuAdapter = new RestaurantMenuAdapter(rests,this);
         recyclerView.setAdapter(restaurantMenuAdapter);
+        //restaurantMenuAdapter = new RestaurantMenuAdapter(FakeDataUtils.generateFakeMenu(restaurantName),this);
+        //recyclerView.setAdapter(restaurantMenuAdapter);
 
     }
 
@@ -101,8 +126,6 @@ public class restaurant_menu_activity extends AppCompatActivity implements Resta
         TextView calorieView = (TextView) view.findViewById(R.id.tv_selected_restaurant_menu_item_calories_RV);
         String itemSelectedName = itemNameView.getText().toString();
 
-        String toastMessage = "Clicked " + itemSelectedName;
-        Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show();
 
         Intent intent = new Intent(this,Add_Item_To_Cart_Activity.class); //makes a new intent to start the add to cart activity
         float calories = Float.valueOf(calorieView.getText().toString());
