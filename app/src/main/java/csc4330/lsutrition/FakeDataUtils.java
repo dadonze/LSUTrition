@@ -99,13 +99,13 @@ public class FakeDataUtils {
             data[4] = new RestaurantMenuItem("Chow Mein", 510);
             data[5] = new RestaurantMenuItem("Cream Cheese Rangoon", 190);
             data[6] = new RestaurantMenuItem("Crispy Shrimp", 130);
-            data[8] = new RestaurantMenuItem("Fried Rice", 520);
-            data[9] = new RestaurantMenuItem("Honey Sesame Chicken Breast", 380);
-            data[10] = new RestaurantMenuItem("Honey Walnut Shrimp", 360);
-            data[11] = new RestaurantMenuItem("Kung Pao Chicken", 290);
-            data[12] = new RestaurantMenuItem("Mixed Vegetables", 80);
-            data[13] = new RestaurantMenuItem("Orange Chicken", 380);
-            data[14] = new RestaurantMenuItem("White Steamed Rice", 380);
+            data[7] = new RestaurantMenuItem("Fried Rice", 520);
+            data[8] = new RestaurantMenuItem("Honey Sesame Chicken Breast", 380);
+            data[9] = new RestaurantMenuItem("Honey Walnut Shrimp", 360);
+            data[10] = new RestaurantMenuItem("Kung Pao Chicken", 290);
+            data[11] = new RestaurantMenuItem("Mixed Vegetables", 80);
+            data[12] = new RestaurantMenuItem("Orange Chicken", 380);
+            data[13] = new RestaurantMenuItem("White Steamed Rice", 380);
             return data;
 
         }else{

@@ -23,7 +23,7 @@ public class restaurant_menu_activity extends AppCompatActivity implements Resta
 
     RestaurantMenuAdapter restaurantMenuAdapter;
     RecyclerView recyclerView;
-    String restaurantName;
+    static String restaurantName;
     /**
         Android System Action called whenever the corresponding layout is inflated (activity launched, phone rotated, ect.)
         Actions taken are all setup required for the app interface to work
@@ -36,7 +36,9 @@ public class restaurant_menu_activity extends AppCompatActivity implements Resta
         setContentView(R.layout.activity_restaurant_menu_activity);
 
         Intent start = getIntent();//obtains a reference to the intent that started this activity
-        restaurantName = start.getStringExtra("Restaurant Name");
+        if(start.hasExtra("Restaurant Name")) {
+            restaurantName = start.getStringExtra("Restaurant Name");
+        }
         setTitle(restaurantName);
         /* Set up for the Recycler View */
         recyclerView = (RecyclerView) findViewById(R.id.menu_item_list_RV);
