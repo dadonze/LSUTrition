@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="wrap_content"
-    android:padding="16dp">
-<TextView
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/tv_restaurant_name_RV_item_display"
-    style="@style/recyclerView_display_theme"
-    android:layout_gravity="center_vertical|start"
-    android:text="McDonalds"
-    />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp">
+    <ListView  app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/listView"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        />
 </FrameLayout>

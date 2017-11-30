@@ -20,16 +20,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/googleg_standard_color_18"
         />
-    <FrameLayout
-        android:layout_width="match_parent"
+    <ListView  app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/listView"
+        android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="50dp">
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/restaurant_List_RV"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        />
 
-    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

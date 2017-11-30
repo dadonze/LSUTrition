@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import csc4330.lsutrition.R;
 import csc4330.lsutrition.RestaurantMenuItem;
 
@@ -16,14 +18,16 @@ import csc4330.lsutrition.RestaurantMenuItem;
 
 public class RestaurantMenuAdapter extends RecyclerView.Adapter<RestaurantMenuAdapter.ItemViewHolder> {
 
-    private RestaurantMenuItem[] menu_items;
+    private ArrayList<RestaurantMenuItem> menu_items;
     private RestaurantMenuItemClickListener restaurantMenuItemClickListener;
     private int numberOfItems;
     private int numberOfViewHolders;
 
-    public RestaurantMenuAdapter(RestaurantMenuItem[] items, RestaurantMenuItemClickListener listener){
-        menu_items=items;
-        numberOfItems= items.length;
+    public RestaurantMenuAdapter(ArrayList<String> menuItemNames, ArrayList<Integer> calories, String res, RestaurantMenuItemClickListener listener){
+        for(int i = 0; i < menuItemNames.size(); i++){
+            menu_items.add(new RestaurantMenuItem(menuItemNames.get(i), res, calories.get(i)));
+        }
+        numberOfItems= menu_items.size();
         numberOfViewHolders = 0;
         restaurantMenuItemClickListener = listener;
     }
@@ -87,8 +91,8 @@ public class RestaurantMenuAdapter extends RecyclerView.Adapter<RestaurantMenuAd
             @param index: the index of the item relative to the entire list
          */
         public void bind(int index){
-            restaurantItemTextView.setText(menu_items[index].getName());
-            String calorieText = String.valueOf(menu_items[index].getCalories());
+            restaurantItemTextView.setText(menu_items.get(index).getName());
+            String calorieText = String.valueOf(menu_items.get(index).getCalories());
             restaurantCalorieTextView.setText(calorieText);
         }
         /**

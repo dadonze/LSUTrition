@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="60dp">
     <TextView
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/checkout_item__name_RV"
         style="@style/recyclerView_display_theme"
@@ -25,12 +25,6 @@
         android:src="@drawable/ic_close_black_24dp"
         android:background="#FFFF"
         android:id="@+id/checkout_item_delete_button_RV"
-
         />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:id="@+id/checkout_item_id_RV"/>
 
 </FrameLayout>

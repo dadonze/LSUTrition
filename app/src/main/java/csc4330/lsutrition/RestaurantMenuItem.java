@@ -9,7 +9,8 @@ package csc4330.lsutrition;
 public class RestaurantMenuItem {
 
     private String name;
-    private float calories;
+    private String restaurant;
+    private int calories;
     //TODO fat_total,unsat_fat,sat_fat,protein,sugars;
 
     /**
@@ -18,8 +19,9 @@ public class RestaurantMenuItem {
      * @param cal - the number of calories in the item
      */
 
-    public RestaurantMenuItem(String nam, float cal){
+    public RestaurantMenuItem(String nam, String res, int cal){
         name = nam;
+        restaurant = res;
         calories = cal;
     }
 
@@ -27,7 +29,7 @@ public class RestaurantMenuItem {
      *
      * @return - the number of calories in the item
      */
-    public float getCalories() {
+    public int getCalories() {
         return calories;
     }
 
@@ -38,4 +40,6 @@ public class RestaurantMenuItem {
     public String getName() {
         return name;
     }
+
+    public String getRestaurant(){return restaurant;}
 }

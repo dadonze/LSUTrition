@@ -12,27 +12,51 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Gravity;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-
-import java.io.InputStream;
-import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import csc4330.lsutrition.Adapters.RestaurantNameAdapter;
-import csc4330.lsutrition.CSVFile;
 import csc4330.lsutrition.FakeDataUtils;
 import csc4330.lsutrition.R;
+import csc4330.lsutrition.Activities.adapter.MyArrayAdapter;
+import csc4330.lsutrition.Activities.model.MyDataModel;
+import csc4330.lsutrition.Activities.parser.JSONparser;
+import csc4330.lsutrition.Activities.utils.InternetConnection;
+import csc4330.lsutrition.Activities.utils.Keys;
+//import com.facebook.drawee.backends.pipeline.Fresco;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements RestaurantNameAdapter.RestaurantNameClickListener {
     private RestaurantNameAdapter restaurantNameAdapter;
     private RecyclerView restaurantRecyclerView;
     private  GoogleSignInClient mGoogleSignInClient;
     private FloatingActionButton googleSignInActionButton;
+    private ListView listView;
+    public ArrayList<MyDataModel> list;
+    public MyArrayAdapter arrayAdapter;
     public static GoogleSignInAccount account;
 
+
+    public ArrayList<MyDataModel> getList(){
+        return this.list;
+    }
     /**
         Android System Action called whenever the corresponding layout is inflated (app launched, phone rotated, ect.)
         Actions taken are all setup required for the app interface to work
@@ -43,7 +67,8 @@ public class MainActivity extends AppCompatActivity implements RestaurantNameAda
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        restaurantRecyclerView = (RecyclerView) findViewById(R.id.restaurant_List_RV);
+        //Fresco.initialize(this);
+        //restaurantRecyclerView = (RecyclerView) findViewById(R.id.restaurant_List_RV);
         googleSignInActionButton = (FloatingActionButton) findViewById(R.id.google_sign_in_AB);
         account = GoogleSignIn.getLastSignedInAccount(this); // attempts to automatically login the user if they have previously logged in
         //hide the google sign in FAB if they are already signed in
@@ -53,37 +78,175 @@ public class MainActivity extends AppCompatActivity implements RestaurantNameAda
         }
         //set up formatting for the recylcer view
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        restaurantRecyclerView.setLayoutManager(layoutManager);
-        restaurantRecyclerView.setHasFixedSize(true);
+        //restaurantRecyclerView.setLayoutManager(layoutManager);
+        //restaurantRecyclerView.setHasFixedSize(true);
 
-        InputStream inputStream = getResources().openRawResource(R.raw.values);
-        CSVFile csvFile = new CSVFile(inputStream);
-        List<String[]> restaurants = csvFile.read();
-        int i = 0;
-        System.out.println(restaurants.size());
-        for (int j = 2; j < restaurants.size(); j++) {
-            if (restaurants.get(j)[0].equals(restaurants.get(j - 1)[0])) continue;
-            else i++;
-        }
-        String[] rests = new String[i];
-        int r = 0;
-        for (int k = 2; k < restaurants.size(); k++) {
-            if (restaurants.get(k)[0].equals(restaurants.get(k - 1)[0])) continue;
-            else {
-                rests[r] = restaurants.get(k)[0];
-                System.out.println(rests[r]);
-                r++;
-            }
-        }
-        restaurantNameAdapter = new RestaurantNameAdapter(rests,this);
-        restaurantRecyclerView.setAdapter(restaurantNameAdapter);
-        //restaurantNameAdapter = new RestaurantNameAdapter(FakeDataUtils.generateRestaurantNames(),this);
-       // restaurantRecyclerView.setAdapter(restaurantNameAdapter);
+
         //constructs the premade view that google uses to sign someone in
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
+        /**
+         * Array List for Binding Data from JSON to this List
+         */
+        list = new ArrayList<>();
+        /**
+         * Binding that List to Adapter
+         */
+        arrayAdapter = new MyArrayAdapter(this, list);
+
+        /**
+         * Getting List and Setting List Adapter
+         */
+        listView = findViewById(R.id.listView);
+        listView.setAdapter(arrayAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //Snackbar.make(findViewById(R.id.), list.get(position).getRestaurantName() + " => " + list.get(position).getMenuItem(), Snackbar.LENGTH_LONG).show();
+            }
+        });
+
+
+
+
+                if (InternetConnection.checkConnection(getApplicationContext())) {
+                    GetDataTask gdt = (GetDataTask) new GetDataTask().execute();
+                    restaurantNameAdapter = new RestaurantNameAdapter(arrayAdapter.getRestaurantList(),this);
+                    //restaurantRecyclerView.setAdapter(restaurantNameAdapter);
+                } else {
+                    //Snackbar.make(view, "Internet Connection Not Available", Snackbar.LENGTH_LONG).show();
+                }
+
+
+
+    }
+
+    /**
+     * Creating Get Data Task for Getting Data From Web
+     */
+    class GetDataTask extends AsyncTask<Void, Void, Void> {
+
+        ProgressDialog dialog;
+        int jIndex;
+        int x;
+        MyDataModel model;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            /**
+             * Progress Dialog for User Interaction
+             */
+
+            x=list.size();
+
+            if(x==0)
+                jIndex=0;
+            else
+                jIndex=x;
+
+            dialog = new ProgressDialog(MainActivity.this);
+            dialog.setTitle("Please Wait..."+x);
+            dialog.setMessage("Loading Database");
+            dialog.show();
+        }
+
+        @Nullable
+        @Override
+        protected Void doInBackground(Void... params) {
+
+            /**
+             * Getting JSON Object from Web Using okHttp
+             */
+            JSONObject jsonObject = JSONparser.getDataFromWeb();
+
+            try {
+                /**
+                 * Check Whether Its NULL???
+                 */
+                if (jsonObject != null) {
+                    /**
+                     * Check Length...
+                     */
+                    if(jsonObject.length() > 0) {
+                        /**
+                         * Getting Array named "contacts" From MAIN Json Object
+                         */
+                        JSONArray array = jsonObject.getJSONArray(Keys.KEY_CONTACTS);
+
+                        /**
+                         * Check Length of Array...
+                         */
+
+
+                        int lenArray = array.length();
+                        if(lenArray > 0) {
+                            for( ; jIndex < lenArray; jIndex++) {
+
+                                /**
+                                 * Creating Every time New Object
+                                 * and
+                                 * Adding into List
+                                 */
+                                model = new MyDataModel();
+
+                                /**
+                                 * Getting Inner Object from contacts array...
+                                 * and
+                                 * From that We will get Name of that Contact
+                                 *
+                                 */
+                                JSONObject innerObject = array.getJSONObject(jIndex);
+                                String restaurantName = innerObject.getString(Keys.KEY_RESTAURANTNAME);
+                                String menuItem = innerObject.getString(Keys.KEY_MENUITEM);
+                                String type = innerObject.getString(Keys.KEY_TYPE);
+                                String calorie = innerObject.getString(Keys.KEY_CALORIES);
+                                Integer calories = Integer.parseInt(calorie);
+
+                                /**
+                                 * Getting Object from Object "phone"
+                                 */
+                                //JSONObject phoneObject = innerObject.getJSONObject(Keys.KEY_PHONE);
+                                //String phone = phoneObject.getString(Keys.KEY_MOBILE);
+
+                                model.setRestaurantName(restaurantName);
+                                model.setMenuItem(menuItem);
+                                model.setType(type);
+                                model.setCalories(calories);
+
+                                /**
+                                 * Adding name and phone concatenation in List...
+                                 */
+                                list.add(model);
+                            }
+                        }
+                    }
+                } else {
+
+                }
+            } catch (JSONException je) {
+                Log.i(JSONparser.TAG, "" + je.getLocalizedMessage());
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            dialog.dismiss();
+            /**
+             * Checking if List size if more than zero then
+             * Update ListView
+             */
+            if(list.size() > 0) {
+                arrayAdapter.notifyDataSetChanged();
+            } else {
+                //Snackbar.make(findViewById(R.id.match_parent), "No Data Found", Snackbar.LENGTH_LONG).show();
+            }
+        }
 
 
     }
@@ -95,9 +258,13 @@ public class MainActivity extends AppCompatActivity implements RestaurantNameAda
      */
     @Override
     public void onRestaurantNameClick(int clickedItemIndex, View view) {
-        TextView textView= (TextView) view.findViewById(R.id.tv_restaurant_name_RV_item_display);
+        TextView textView= (TextView) view.findViewById(R.id.listView);
+        String toastMessage = "Clicked " + textView.getText().toString() + " " + clickedItemIndex;
+        Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show();
         Intent intent = new Intent(MainActivity.this,restaurant_menu_activity.class); // create a new intent to the menu activity
-        intent.putExtra("Restaurant Name",textView.getText().toString()); // puts the name of the restaurant in the intent, allowing us to specify which menu to query in the menu
+        intent.putExtra("Restaurant Name",textView.getText().toString());
+        intent.putExtra("Menu Items", arrayAdapter.getMenuItemList());
+        intent.putExtra("Calories", arrayAdapter.getCalorieList());// puts the name of the restaurant in the intent, allowing us to specify which menu to query in the menu
         startActivity(intent);
     }
 

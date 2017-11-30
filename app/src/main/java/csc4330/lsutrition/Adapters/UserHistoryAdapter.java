@@ -49,21 +49,18 @@ public class UserHistoryAdapter extends RecyclerView.Adapter<UserHistoryAdapter.
     public void onBindViewHolder(HistoryViewHolder holder, int position) {
         int idIndex = historyCursor.getColumnIndex(OrderContract.OrderEntry._ID);
         int calorieIndex = historyCursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_ORDER_CALORIES);
-        int timeIndex = historyCursor.getColumnIndex(OrderContract.OrderEntry.COLUMN_ORDER_TIME);
         historyCursor.moveToPosition(position); // get to the right location in the cursor
 
-        /* Obtain the values of the desired data */
+        // Determine the values of the wanted data
         final int id = historyCursor.getInt(idIndex);
         float calories = historyCursor.getFloat(calorieIndex);
-        final String time = historyCursor.getString(timeIndex);
 
 
-        /* Show values in the appropriate UI elements */
+        //Set values
         String idtext="Order #"+String.valueOf(id);
         String caltext = String.valueOf(calories) + " Calories";
         holder.idView.setText(idtext);
         holder.calorieView.setText(caltext);
-        holder.timeView.setText(time);
 
     }
 
@@ -104,7 +101,6 @@ public class UserHistoryAdapter extends RecyclerView.Adapter<UserHistoryAdapter.
 
         private TextView idView;
         private TextView calorieView;
-        private TextView timeView;
 
         /**
          * Constructor for the HistoryViewHolder
@@ -114,7 +110,6 @@ public class UserHistoryAdapter extends RecyclerView.Adapter<UserHistoryAdapter.
             super(itemView);
             idView = itemView.findViewById(R.id.order_history_ordernumber_RV);
             calorieView = itemView.findViewById(R.id.order_history_totalcal_RV);
-            timeView = itemView.findViewById(R.id.order_history_time_RV);
 
         }
     }

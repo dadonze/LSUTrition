@@ -15,7 +15,7 @@ import csc4330.lsutrition.User_Order_Cart;
 public class Add_Item_To_Cart_Activity extends AppCompatActivity {
         TextView calorieView;
         private String itemName;
-        private Float itemCalories;
+        private int itemCalories;
     /**
      Android System Action called whenever the corresponding layout is inflated (activity launched, phone rotated, ect.)
      Actions taken are all setup required for the app interface to work
@@ -33,7 +33,7 @@ public class Add_Item_To_Cart_Activity extends AppCompatActivity {
         calorieView = findViewById(R.id.item_view_calories);
         TextView itemNameView = findViewById(R.id.item_view_name);
         itemName = start.getStringExtra("Item Name");//obtains the menu item's name
-        itemCalories = start.getFloatExtra("CaloriesF",300);//obtains the float representation of the calories, 300 is an arbitrary default value(required by signature)
+        itemCalories = start.getIntExtra("CaloriesF",300);//obtains the float representation of the calories, 300 is an arbitrary default value(required by signature)
 
         itemNameView.setText(itemName);
         calorieView.setText(start.getStringExtra("CaloriesS"));
@@ -48,7 +48,7 @@ public class Add_Item_To_Cart_Activity extends AppCompatActivity {
      */
     public void addToCart(View view){
         User_Order_Cart cart = User_Order_Cart.createUser_Order_Cart();//Either create a new Order Cart or obtain a reference to the current one
-        cart.addItem(new RestaurantMenuItem(itemName,itemCalories));
+        cart.addItem(new RestaurantMenuItem(itemName,"",itemCalories));
         String toastMessage = itemName + " Added to your Order";
         Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show();//Displays a toast to the user confirming the item was added
         finish();//ends the activity and returns to the previous one
@@ -56,7 +56,7 @@ public class Add_Item_To_Cart_Activity extends AppCompatActivity {
     }
     public void addAndFinish(View view){
         User_Order_Cart cart = User_Order_Cart.createUser_Order_Cart();//Either create a new Order Cart or obtain a reference to the current one
-        cart.addItem(new RestaurantMenuItem(itemName,itemCalories));
+        cart.addItem(new RestaurantMenuItem(itemName,"",itemCalories));
         Intent intent = new Intent(this,Finish_Order_Activity.class);
         startActivity(intent);
         finish();//ends the activity and returns to the previous one(After the activity is returned to)
